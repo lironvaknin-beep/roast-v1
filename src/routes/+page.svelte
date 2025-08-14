@@ -51,14 +51,14 @@
 	{#if !capturedImageData}
 	<div class="upload-box">
 		<label for="file-upload">📂 בחר תמונה...</label>
-		<input id="file-upload" type="file" accept="image/*" on:change={"handleFileSelect"} />
+		<input id="file-upload" type="file" accept="image/*" on:change={handleFileSelect} />
 	</div>
 	{/if}
 
 	{#if capturedImageData}
 	<div class="preview">
-		<img src={"capturedImageData"} alt="Captured preview" />
-		<button class="roast-btn" on:click={"getRoast"} disabled={"isLoading"}>
+		<img src={capturedImageData} alt="Captured preview" />
+		<button class="roast-btn" on:click={getRoast} disabled={isLoading}>
 			{isLoading ? 'חושב...' : 'קבל Roast!'}
 		</button>
 	</div>
